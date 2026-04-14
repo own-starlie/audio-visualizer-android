@@ -1,5 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
+
 buildscript {
     
     repositories {
@@ -11,6 +12,57 @@ buildscript {
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
 
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+
+ext {
+
+
+    //sdk and tools
+    buildToolsVersion = '28.0.3'
+    compileSdkVersion = 28
+    minSdkVersion = 16
+    targetSdkVersion = 28
+
+
+    supportLibraryVersion = '28.0.0'
+    constraintLayoutVersion = '1.1.3'
+
+
+    //test dependencies
+    expressoVersion = '3.0.1'
+    testRunnerVersion = '1.0.1'
+    jUnitVersion = '4.12'
+}
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -19,7 +71,7 @@ buildscript {
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
@@ -30,16 +82,16 @@ task clean(type: Delete) {
 ext {
 
     //sdk and tools
-    buildToolsVersion = '28.0.3'
-    compileSdkVersion = 28
-    minSdkVersion = 16
-    targetSdkVersion = 28
+    buildToolsVersion = '34.0.0'
+    compileSdkVersion = 34
+    minSdkVersion = 21
+    targetSdkVersion = 34
 
     supportLibraryVersion = '28.0.0'
-    constraintLayoutVersion = '1.1.3'
+    constraintLayoutVersion = '2.1.4'
 
     //test dependencies
-    expressoVersion = '3.0.1'
-    testRunnerVersion = '1.0.1'
-    jUnitVersion = '4.12'
+    expressoVersion = '3.5.1'
+    testRunnerVersion = '1.5.2'
+    jUnitVersion = '4.13.2'
 }
